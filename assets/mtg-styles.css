@@ -225,14 +225,157 @@
     var(--color-mtg-blue-primary) 100%);
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
+/* Accessibility enhancements for MTG theme */
+@media (prefers-reduced-motion: reduce) {
   .product-card::before,
-  .collection-card::after {
-    display: none;
+  .collection-card::after,
+  .hero::before,
+  .banner::before {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .product-card::before {
+    background: linear-gradient(135deg, 
+      #000080 0%, 
+      #4B0082 25%,
+      #FFD700 50%,
+      #800080 75%,
+      #0000FF 100%);
   }
   
   .slide__content::before {
-    height: 2px;
+    background: linear-gradient(90deg, 
+      #000080 0%,
+      #4B0082 25%,
+      #FFD700 50%,
+      #800080 75%,
+      #0000FF 100%);
+  }
+}
+
+/* Focus states for better accessibility */
+.product-card:focus-within,
+.collection-card:focus-within {
+  outline: 2px solid var(--color-mtg-gold-primary);
+  outline-offset: 2px;
+}
+
+/* Enhanced button focus states */
+.btn-primary:focus,
+.button--primary:focus {
+  outline: 2px solid var(--color-mtg-gold-primary);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(255, 143, 0, 0.2);
+}
+
+/* Slideshow controls enhancement */
+slideshow-component [data-role="controls"] button {
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+slideshow-component [data-role="controls"] button:hover {
+  border-color: var(--color-mtg-gold-primary);
+}
+
+slideshow-component [data-role="controls"] button:focus {
+  outline: 2px solid var(--color-mtg-gold-primary);
+  outline-offset: 2px;
+}
+
+/* Enhanced slideshow arrows */
+.slideshow-arrows button {
+  background: rgba(26, 35, 126, 0.8);
+  border: 2px solid var(--color-mtg-gold-primary);
+  border-radius: 50%;
+  color: var(--color-mtg-gold-primary);
+  transition: all 0.3s ease;
+}
+
+.slideshow-arrows button:hover {
+  background: var(--color-mtg-gold-primary);
+  color: #000000;
+  transform: scale(1.1);
+}
+
+/* Product grid enhancements */
+.product-grid .product-card {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(26, 35, 126, 0.1);
+}
+
+/* Header navigation enhancement */
+.header nav a {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.header nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-mtg-gold-primary);
+  transition: width 0.3s ease;
+}
+
+.header nav a:hover::after,
+.header nav a:focus::after {
+  width: 100%;
+}
+
+/* Form enhancements for better UX */
+.form-field {
+  position: relative;
+}
+
+.form-field input:focus + label,
+.form-field textarea:focus + label {
+  color: var(--color-mtg-blue-primary);
+  transform: translateY(-100%) scale(0.9);
+}
+
+/* Loading states with MTG theming */
+.loading,
+.skeleton {
+  background: linear-gradient(90deg, 
+    rgba(26, 35, 126, 0.1) 0%,
+    rgba(123, 31, 162, 0.1) 50%,
+    rgba(26, 35, 126, 0.1) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Print styles */
+@media print {
+  .product-card::before,
+  .collection-card::after,
+  .hero::before,
+  .banner::before,
+  .slideshow-arrows,
+  [data-role="controls"] {
+    display: none !important;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-mtg-text-primary: #f5f5f5;
+    --color-mtg-text-secondary: #e0e0e0;
+    --color-mtg-bg-primary: #121212;
+    --color-mtg-bg-secondary: #1e1e1e;
   }
 }
