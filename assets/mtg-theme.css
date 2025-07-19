@@ -1,0 +1,158 @@
+/* MTG Theme Enhancements */
+
+/* Magic-inspired gradient borders and glows */
+.color-scheme-mtg .slideshow-component,
+.color-scheme-5 .slideshow-component {
+  position: relative;
+}
+
+.color-scheme-mtg .slideshow-component::before,
+.color-scheme-5 .slideshow-component::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(
+    45deg,
+    #3b82f6,
+    #fbbf24,
+    #dc2626,
+    #10b981,
+    #7c3aed,
+    #3b82f6
+  );
+  background-size: 400% 400%;
+  border-radius: 8px;
+  z-index: -1;
+  animation: magicGlow 6s ease-in-out infinite;
+  opacity: 0.3;
+}
+
+@keyframes magicGlow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Enhanced slideshow controls for MTG theme */
+.color-scheme-mtg slideshow-controls,
+.color-scheme-5 slideshow-controls {
+  backdrop-filter: blur(10px);
+  background: rgba(26, 26, 26, 0.8);
+  border-radius: 12px;
+  padding: 8px 16px;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.color-scheme-mtg .slideshow-controls__button,
+.color-scheme-5 .slideshow-controls__button {
+  background: linear-gradient(135deg, #3b82f6, #1e3a8a);
+  border: 1px solid #fbbf24;
+  transition: all 0.3s ease;
+}
+
+.color-scheme-mtg .slideshow-controls__button:hover,
+.color-scheme-5 .slideshow-controls__button:hover {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  box-shadow: 0 0 12px rgba(251, 191, 36, 0.4);
+  transform: scale(1.1);
+}
+
+.color-scheme-mtg .slideshow-controls__button.active,
+.color-scheme-5 .slideshow-controls__button.active {
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  box-shadow: 0 0 16px rgba(220, 38, 38, 0.6);
+}
+
+/* Mystical slideshow arrows */
+.color-scheme-mtg slideshow-arrows button,
+.color-scheme-5 slideshow-arrows button {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.9), rgba(30, 58, 138, 0.9));
+  border: 2px solid #fbbf24;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.color-scheme-mtg slideshow-arrows button:hover,
+.color-scheme-5 slideshow-arrows button:hover {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  transform: scale(1.15);
+  box-shadow: 0 6px 20px rgba(251, 191, 36, 0.5);
+}
+
+.color-scheme-mtg slideshow-arrows button svg,
+.color-scheme-5 slideshow-arrows button svg {
+  filter: drop-shadow(0 0 4px rgba(248, 250, 252, 0.8));
+}
+
+/* Slide content overlays for better readability */
+.color-scheme-mtg .group,
+.color-scheme-5 .group {
+  backdrop-filter: blur(8px);
+  background: rgba(26, 26, 26, 0.85);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+}
+
+/* Text glow effects for headings */
+.color-scheme-mtg h1,
+.color-scheme-mtg h2,
+.color-scheme-mtg h3,
+.color-scheme-5 h1,
+.color-scheme-5 h2,
+.color-scheme-5 h3 {
+  text-shadow: 0 0 10px rgba(251, 191, 36, 0.6);
+}
+
+/* Button enhancements */
+.color-scheme-mtg .button--primary,
+.color-scheme-5 .button--primary {
+  background: linear-gradient(135deg, #3b82f6, #1e3a8a);
+  border: 2px solid #fbbf24;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.color-scheme-mtg .button--primary::before,
+.color-scheme-5 .button--primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.4), transparent);
+  transition: left 0.6s ease;
+}
+
+.color-scheme-mtg .button--primary:hover::before,
+.color-scheme-5 .button--primary:hover::before {
+  left: 100%;
+}
+
+.color-scheme-mtg .button--primary:hover,
+.color-scheme-5 .button--primary:hover {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .color-scheme-mtg .slideshow-component::before,
+  .color-scheme-5 .slideshow-component::before {
+    border-radius: 4px;
+  }
+  
+  .color-scheme-mtg slideshow-controls,
+  .color-scheme-5 slideshow-controls {
+    padding: 6px 12px;
+  }
+}

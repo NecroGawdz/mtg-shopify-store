@@ -1,0 +1,200 @@
+/* MTG Product Card Enhancements */
+
+/* Enhanced product cards for MTG theme */
+.color-scheme-mtg .product-card,
+.color-scheme-5 .product-card {
+  background: linear-gradient(135deg, rgba(26, 26, 26, 0.95), rgba(45, 45, 45, 0.95));
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 12px;
+  transition: all var(--mtg-transition-normal) ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.color-scheme-mtg .product-card::before,
+.color-scheme-5 .product-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(59, 130, 246, 0.1),
+    transparent
+  );
+  transition: left 0.6s ease;
+  z-index: 1;
+}
+
+.color-scheme-mtg .product-card:hover::before,
+.color-scheme-5 .product-card:hover::before {
+  left: 100%;
+}
+
+.color-scheme-mtg .product-card:hover,
+.color-scheme-5 .product-card:hover {
+  border-color: #fbbf24;
+  transform: translateY(-8px);
+  box-shadow: 
+    0 12px 32px rgba(0, 0, 0, 0.6),
+    0 0 24px rgba(59, 130, 246, 0.3);
+}
+
+/* Product card media enhancements */
+.color-scheme-mtg .product-card img,
+.color-scheme-5 .product-card img {
+  transition: transform var(--mtg-transition-normal) ease;
+  border-radius: 8px;
+}
+
+.color-scheme-mtg .product-card:hover img,
+.color-scheme-5 .product-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Product title styling */
+.color-scheme-mtg .product-card h3,
+.color-scheme-mtg .product-card .product-title,
+.color-scheme-5 .product-card h3,
+.color-scheme-5 .product-card .product-title {
+  color: var(--mtg-gold);
+  text-shadow: 0 0 8px rgba(251, 191, 36, 0.4);
+  font-weight: 600;
+  position: relative;
+  z-index: 2;
+}
+
+/* Product price styling */
+.color-scheme-mtg .product-card .price,
+.color-scheme-5 .product-card .price {
+  color: var(--mtg-light);
+  font-weight: 700;
+  font-size: 1.1em;
+  position: relative;
+  z-index: 2;
+}
+
+.color-scheme-mtg .product-card .price .compare-at-price,
+.color-scheme-5 .product-card .price .compare-at-price {
+  color: var(--mtg-red);
+  text-decoration: line-through;
+}
+
+.color-scheme-mtg .product-card .price .sale-price,
+.color-scheme-5 .product-card .price .sale-price {
+  color: var(--mtg-green);
+  font-weight: 800;
+}
+
+/* Hero section enhancements */
+.color-scheme-mtg .hero,
+.color-scheme-5 .hero {
+  position: relative;
+}
+
+.color-scheme-mtg .hero::after,
+.color-scheme-5 .hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(220, 38, 38, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(124, 58, 237, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.color-scheme-mtg .hero .group,
+.color-scheme-5 .hero .group {
+  position: relative;
+  z-index: 2;
+}
+
+/* Button enhancements for all sections */
+.color-scheme-mtg button,
+.color-scheme-mtg .button,
+.color-scheme-5 button,
+.color-scheme-5 .button {
+  background: linear-gradient(135deg, var(--mtg-blue), var(--mtg-blue-dark));
+  border: 2px solid var(--mtg-gold);
+  color: var(--mtg-light);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all var(--mtg-transition-normal) ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.color-scheme-mtg button::before,
+.color-scheme-mtg .button::before,
+.color-scheme-5 button::before,
+.color-scheme-5 .button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--mtg-gold), var(--mtg-gold-dark));
+  transition: left 0.4s ease;
+  z-index: -1;
+}
+
+.color-scheme-mtg button:hover::before,
+.color-scheme-mtg .button:hover::before,
+.color-scheme-5 button:hover::before,
+.color-scheme-5 .button:hover::before {
+  left: 0;
+}
+
+.color-scheme-mtg button:hover,
+.color-scheme-mtg .button:hover,
+.color-scheme-5 button:hover,
+.color-scheme-5 .button:hover {
+  color: var(--mtg-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--mtg-shadow-gold);
+}
+
+/* Section backgrounds */
+.color-scheme-mtg,
+.color-scheme-5 {
+  position: relative;
+}
+
+.color-scheme-mtg::before,
+.color-scheme-5::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(45deg, transparent 49%, rgba(59, 130, 246, 0.03) 50%, transparent 51%),
+    linear-gradient(-45deg, transparent 49%, rgba(251, 191, 36, 0.03) 50%, transparent 51%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .color-scheme-mtg .product-card:hover,
+  .color-scheme-5 .product-card:hover {
+    transform: translateY(-4px);
+  }
+  
+  .color-scheme-mtg .product-card img:hover,
+  .color-scheme-5 .product-card img:hover {
+    transform: scale(1.02);
+  }
+}
