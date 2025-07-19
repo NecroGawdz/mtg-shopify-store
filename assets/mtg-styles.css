@@ -1,0 +1,238 @@
+/* MTG-inspired card border effects and design elements */
+
+/* Product cards with MTG-style borders */
+.product-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.product-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 8px;
+  padding: 2px;
+  background: linear-gradient(135deg, 
+    var(--color-mtg-blue-primary) 0%, 
+    var(--color-mtg-purple-primary) 25%,
+    var(--color-mtg-gold-primary) 50%,
+    var(--color-mtg-purple-secondary) 75%,
+    var(--color-mtg-blue-secondary) 100%);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.product-card:hover::before {
+  opacity: 1;
+}
+
+/* Collection cards with subtle MTG styling */
+.collection-card {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.collection-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, 
+    rgba(26, 35, 126, 0.1) 0%,
+    rgba(123, 31, 162, 0.1) 50%,
+    rgba(255, 143, 0, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.collection-card:hover::after {
+  opacity: 1;
+}
+
+/* Rarity-based styling utility classes */
+.mtg-rarity-common {
+  border-left: 4px solid var(--color-mtg-common);
+}
+
+.mtg-rarity-uncommon {
+  border-left: 4px solid var(--color-mtg-uncommon);
+}
+
+.mtg-rarity-rare {
+  border-left: 4px solid var(--color-mtg-rare);
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.2);
+}
+
+.mtg-rarity-mythic {
+  border-left: 4px solid var(--color-mtg-mythic);
+  box-shadow: 0 2px 8px rgba(255, 69, 0, 0.2);
+}
+
+/* Enhanced slideshow styling for MTG theme */
+.slideshow slide-component {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.slide__content {
+  position: relative;
+}
+
+.slide__content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    var(--color-mtg-blue-primary) 0%,
+    var(--color-mtg-purple-primary) 25%,
+    var(--color-mtg-gold-primary) 50%,
+    var(--color-mtg-purple-secondary) 75%,
+    var(--color-mtg-blue-secondary) 100%);
+  z-index: 1;
+}
+
+/* Button enhancements with MTG styling */
+.btn-primary,
+.button--primary {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--color-mtg-blue-primary) 0%, var(--color-mtg-blue-secondary) 100%);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary::before,
+.button--primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before,
+.button--primary:hover::before {
+  left: 100%;
+}
+
+/* Subtle texture overlay for cards */
+.product-card__content,
+.collection-card__content {
+  position: relative;
+}
+
+.product-card__content::after,
+.collection-card__content::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0);
+  background-size: 20px 20px;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+/* Hero/Banner section with MTG styling */
+.hero,
+.banner {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before,
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, 
+    rgba(26, 35, 126, 0.05) 0%,
+    rgba(74, 20, 140, 0.05) 25%,
+    rgba(255, 143, 0, 0.05) 50%,
+    rgba(123, 31, 162, 0.05) 75%,
+    rgba(57, 73, 171, 0.05) 100%);
+  background-size: 400% 400%;
+  animation: mtgGradientShift 8s ease infinite;
+  pointer-events: none;
+}
+
+@keyframes mtgGradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Enhanced form inputs with MTG styling */
+.field input,
+.field textarea,
+.field select {
+  border: 1px solid rgba(26, 35, 126, 0.2);
+  border-radius: 4px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  border-color: var(--color-mtg-blue-primary);
+  box-shadow: 0 0 0 2px rgba(26, 35, 126, 0.1);
+  outline: none;
+}
+
+/* Header enhancements */
+.header {
+  position: relative;
+  z-index: 10;
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    var(--color-mtg-blue-primary) 0%,
+    var(--color-mtg-gold-primary) 50%,
+    var(--color-mtg-blue-primary) 100%);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .product-card::before,
+  .collection-card::after {
+    display: none;
+  }
+  
+  .slide__content::before {
+    height: 2px;
+  }
+}
