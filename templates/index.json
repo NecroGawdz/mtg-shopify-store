@@ -51,7 +51,7 @@
             "text_KxeJ6r": {
               "type": "text",
               "settings": {
-                "text": "<p>Savor every. last. bite. </p>",
+                "text": "<p>Unleash your planeswalker power.</p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
@@ -76,7 +76,7 @@
             "button_nazDaa": {
               "type": "button",
               "settings": {
-                "label": "Shop all →",
+                "label": "Shop MTG →",
                 "link": "shopify://collections/all",
                 "open_in_new_tab": false,
                 "style_class": "link",
@@ -112,7 +112,7 @@
         "section_width": "page-width",
         "section_height": "large",
         "section_height_custom": 50,
-        "color_scheme": "scheme-4",
+        "color_scheme": "scheme-mtg",
         "toggle_overlay": false,
         "overlay_color": "#000000",
         "overlay_style": "solid",
@@ -413,7 +413,7 @@
         "section_width": "full-width",
         "horizontal_alignment": "flex-start",
         "gap": 0,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-5",
         "padding-block-start": 0,
         "padding-block-end": 0
       }
@@ -486,7 +486,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h3>A Family Tradition of Bold, Fresh Flavor</h3>",
+                "text": "<h3>Master the Art of Strategic Gaming</h3>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",

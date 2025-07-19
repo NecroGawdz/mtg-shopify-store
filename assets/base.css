@@ -4116,3 +4116,47 @@ text-component {
   transform: none;
   box-shadow: none;
 }
+
+/* MTG Theme Global Enhancements */
+/* Smooth scrolling for better UX */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced focus states for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--mtg-gold, #fbbf24);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Improved text selection for MTG themes */
+::selection {
+  background: rgba(59, 130, 246, 0.3);
+  color: inherit;
+}
+
+/* Loading states and animations */
+@keyframes mtgFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mtg-fade-in {
+  animation: mtgFadeIn 0.6s ease-out;
+}
+
+/* Responsive improvements for MTG theme */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
